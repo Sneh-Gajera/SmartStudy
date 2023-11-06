@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartStudy</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+
+    <!-- flaticon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- bootstap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+     <!-- pre-loader -->
+     <div id="pre_loader">
+      <div class="loader">
+        <div>
+          <ul>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+              </svg>
+            </li>
+          </ul>
+        </div><span>Loading</span></div>
+    </div>
+    <!-- pre-loader -->
+
+
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <span
+              ><a href="#"><i class="fa-solid fa-book"></i> SmartStudy</a></span
+            >
+          </div>
+          <div class="menu">
+            <ul>
+              <li><a href="smartstudy.html">Home</a></li>
+              <li><a href="about1.html">About</a></li>
+              <li><a href="courses.html">Course</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="humberger">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- hero -->
+
+    <div class="hero">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="hero_text">
+          <h1>Access To 1000+ Courses from 300 Instructors</h1>
+
+          <div class="search">
+            <input type="text" placeholder="Search.." />
+            <div class="btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- best learn -->
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div class="image_part">
+            <img src="img/study111.png" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="best_learn">
+            <div class="text_part">
+              <h2>
+                Join World's <span>largest learning </span> platform today
+              </h2>
+              <p>
+                The world's best learning involves dynamic, personalized
+                experiences that foster critical thinking, creativity, and
+                adaptability. It integrates technology, diverse resources, and
+                collaborative environments to empower individuals with the
+                skills and knowledge they need to thrive in an ever-evolving
+                global landscape.
+              </p>
+
+              <button class="read_more">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- best learn -->
+
+    <!-- popular course -->
+    <div class="same_sec">
+      <div class="popular">
+        <div class="container">
+          <div class="titles">
+            <h2>Our Most <span>Poular Course</span></h2>
+          </div>
+          <div class="row mt-4">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="popular1">
+                <div class="image_part">
+                  <img src="img/ui-ux.jpg" alt="" />
+                </div>
+                <h3>UI/UX DESIGN</h3>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="popular1">
+                <div class="image_part">
+                  <img src="img/mobileapp.avif" alt="" />
+                </div>
+                <h3>APP DEVELOPMENT</h3>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="popular1">
+                <div class="image_part">
+                  <img src="img/web.avif" alt="" />
+                </div>
+                <h3>WEB DEVELOPMENT</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popular course -->
+
+    <!-- counter -->
+    <div class="same_sec">
+      <div class="counters">
+        <div class="container">
+          <div class="row pt-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="counter_part">
+                <div class="icon_part">
+                  <i class="fa-solid fa-children"></i>
+                </div>
+                <div class="text_part">
+                  <h4>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="34"
+                      data-purecounter-once="false"
+                      class="purecounter counter-data timer count-title count-number"
+                      >0</span
+                    >k
+                  </h4>
+                  <p>Students</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="counter_part">
+                <div class="icon_part col2">
+                  <i class="fa-solid fa-person-chalkboard"></i>
+                </div>
+                <div class="text_part">
+                  <h4>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="50"
+                      data-purecounter-once="false"
+                      class="purecounter counter-data timer count-title count-number"
+                      >0</span
+                    >+
+                  </h4>
+                  <p>Instructors</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="counter_part">
+                <div class="icon_part col3">
+                  <i class="fi fi-sr-camera-movie"></i>
+                </div>
+                <div class="text_part">
+                  <h4>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="35"
+                      data-purecounter-once="false"
+                      class="purecounter counter-data timer count-title count-number"
+                      >0</span
+                    >k
+                  </h4>
+                  <p>Video</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="counter_part">
+                <div class="icon_part col4">
+                  <i class="fi fi-sr-trophy-star"></i>
+                </div>
+                <div class="text_part">
+                  <h4>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="60"
+                      data-purecounter-once="false"
+                      class="purecounter counter-data timer count-title count-number"
+                      >0</span
+                    >+
+                  </h4>
+                  <p>Awards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- counter -->
+
+    <!-- help -->
+
+    <div class="same_sec">
+      <div class="help">
+        <div class="container">
+          <div class="titles text-center">
+            <h2 class="mb-5">We will help you <span>learn</span> what you are passionates about</h2>
+          </div>
+          <div class="row">
+
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="help_image">
+                <img src="img/study_home.png" alt="">
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="help_text_main">
+                  <div class="help_text">
+                    <div class="no">
+                      <h3>01.</h3>
+                    </div>
+                    <div class="text">
+                      <h3>Go at your own pace</h3>
+                      <p>You will get your own pace where you can find all the relevant courses for you. Here you can register and learn all the techniques which you want to know.</p>
+                    </div>
+                  </div>
+  
+                  <div class="help_text">
+                    <div class="no">
+                      <h3>02.</h3>
+                    </div>
+                    <div class="text">
+                      <h3>Learn from industry experts</h3>
+                      <p>Our industry experts will guide you at each and every point when you are pursuing these courses. Also, if you face any issue during this, they will guide you to call over.</p>
+                    </div>
+                  </div>
+  
+                  <div class="help_text">
+                    <div class="no">
+                      <h3>03.</h3>
+                    </div>
+                    <div class="text">
+                      <h3>Find video courses on almost any topic</h3>
+                      <p>You will get the courses related to almost all the topics which you are searching for. Also, you will find the most relevant topics as per your choice.</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- help -->
+
+    <!-- feedback -->
+    <div class="same_sec">
+      <div class="feedback">
+        <div class="container">
+          <div class="titles">
+            <h2>Student <span>Feedback</span></h2>
+          </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="student">
+                  <div class="stud_inner">
+                    <div class="stud_image">
+                      <img src="img/feed1.png" alt="" />
+                    </div>
+                    <div class="stud_name">
+                      <h4>Sneh Patel</h4>
+                      <p>Web Designer</p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Totam eligendi veritatis neque nihil, eaque doloribus
+                    tempora laudantium dolor optio accusamus.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="student">
+                  <div class="stud_inner">
+                    <div class="stud_image">
+                      <img src="img/feed3.png" alt="" />
+                    </div>
+                    <div class="stud_name">
+                      <h4>Mihir Patel</h4>
+                      <p>Web Developer</p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Totam eligendi veritatis neque nihil, eaque doloribus
+                    tempora laudantium dolor optio accusamus.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="student">
+                  <div class="stud_inner">
+                    <div class="stud_image">
+                      <img src="img/feed2.png" alt="" />
+                    </div>
+                    <div class="stud_name">
+                      <h4>Nency Patel</h4>
+                      <p>Ui-Ux Designer</p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Totam eligendi veritatis neque nihil, eaque doloribus
+                    tempora laudantium dolor optio accusamus.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="student">
+                  <div class="stud_inner">
+                    <div class="stud_image">
+                      <img src="img/feed1.png" alt="" />
+                    </div>
+                    <div class="stud_name">
+                      <h4>Brijesh Patel</h4>
+                      <p>Php Developer</p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Totam eligendi veritatis neque nihil, eaque doloribus
+                    tempora laudantium dolor optio accusamus.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="student">
+                  <div class="stud_inner">
+                    <div class="stud_image">
+                      <img src="img/feed3.png" alt="" />
+                    </div>
+                    <div class="stud_name">
+                      <h4>Ravi Patel</h4>
+                      <p>App Developer</p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Totam eligendi veritatis neque nihil, eaque doloribus
+                    tempora laudantium dolor optio accusamus.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- feedback -->
+
+    <!-- start learn -->
+    <div class="same_sec">
+      <div class="container">
+        <div class="start_learn">
+          <div class="learn_text">
+            <span>Become A Student</span>
+            <h2>You Can Join With Our New Course?</h2>
+          </div>
+          <button class="read_more">Get Started</button>
+        </div>
+      </div>
+    </div>
+    <!-- start learn -->
+
+    <!-- footer -->
+    <div class="same_sec">
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4">
+              <div class="logo">
+                <span
+                  ><a href="#"
+                    ><i class="fa-solid fa-book"></i> SmartStudy</a
+                  ></span
+                >
+              </div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tempora debitis nemo repellendus veritatis dolorem praesentium
+                delectus ducimus expedita nisi inventore.
+              </p>
+              <div class="icons mt-4">
+                <img src="img/wp.png" alt="" />
+                <img src="img/fb.png" alt="" />
+                <img src="img/insta.png" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 mb-4">
+              <div class="logo">
+                <span><a href="#">Links</a></span>
+              </div>
+              <div class="menus">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Course</a>
+                <a href="">Contact</a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 m">
+              <div class="logo">
+                <span><a href="#">Contact</a></span>
+              </div>
+              <div class="contact_menu">
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    smartstudy2020@gmail.com
+                  </li>
+
+                  <li><i class="fa-solid fa-phone"></i> +91 9978087554</li>
+
+                  <li>
+                    <i class="fa-solid fa-location-dot"></i> Ahemdabad, Gujarat
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bootstap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <!-- counter -->
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js" defer></script>
+
+    <!-- Initialize Swiper -->
+
+  
+  </body>
+</html>
