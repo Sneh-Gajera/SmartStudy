@@ -91,25 +91,26 @@ a {
 @keyframes after6 {
   0% {
     height: 0.5em;
-    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75),
-      -0.5em -1em rgba(233, 169, 32, 0.75);
+    box-shadow: 0.5em 1em rgba(33, 33, 47, 0.75)
+    ,
+      -0.5em -1em rgba(255, 163, 55, 0.75);
   }
 
   35% {
     height: 2.5em;
-    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75),
-      -0.5em 0 rgba(233, 169, 32, 0.75);
+    box-shadow: 0.5em 0 rgba(33, 33, 47, 0.75),
+      -0.5em 0 rgba(255, 163, 55, 0.75);
   }
 
   70% {
     height: 0.5em;
-    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75),
-      -0.5em 1em rgba(233, 169, 32, 0.75);
+    box-shadow: 0.5em -1em rgba(33, 33, 47, 0.75),
+      -0.5em 1em rgba(255, 163, 55, 0.75);
   }
 
   100% {
-    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75),
-      -0.5em -1em rgba(233, 169, 32, 0.75);
+    box-shadow: 0.5em 1em rgba(33, 33, 47, 0.75),
+      -0.5em -1em rgba(255, 163, 55, 0.75);
   }
 }
 

@@ -7,7 +7,7 @@ $(document).ready(function () {
   }, 2000);
   setTimeout(() => {
     $("#pre_loader").remove("loaded");
-  }, 3000);
+  }, 4000);
 });
 
 
